@@ -1,29 +1,29 @@
 {
-  "name": "nsbui",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "sample-app",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/nsbui/src",
+  "sourceRoot": "sample-app/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/nsbui",
-        "index": "apps/nsbui/src/index.html",
-        "main": "apps/nsbui/src/main.ts",
+        "outputPath": "dist/sample-app",
+        "index": "sample-app/src/index.html",
+        "main": "sample-app/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/nsbui/tsconfig.app.json",
+        "tsConfig": "sample-app/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
-           "glob": "**/*",
-    "input": "apps/nsbui/public",
-    "output": "./"
+            "glob": "**/*",
+            "input": "sample-app/public",
+             "output": "./"
           }
         ],
-        "styles": ["apps/nsbui/src/styles.scss"],
+        "styles": ["sample-app/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -53,22 +53,23 @@
       },
       "defaultConfiguration": "production"
     },
-  "serve": {
-  "executor": "@angular-devkit/build-angular:dev-server",
-  "configurations": {
-    "production": {
-      "browserTarget": "nsbui:build:production"
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+
+      "configurations": {
+        "production": {
+          "browserTarget": "sample-app:build:production"
+        },
+        "development": {
+          "browserTarget": "sample-app:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
     },
-    "development": {
-      "browserTarget": "nsbui:build:development"
-    }
-  },
-  "defaultConfiguration": "development"
-},
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "nsbui:build"
+        "buildTarget": "sample-app:build"
       }
     },
     "lint": {
@@ -78,7 +79,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/nsbui/jest.config.ts"
+        "jestConfig": "sample-app/jest.config.ts"
       }
     }
   }

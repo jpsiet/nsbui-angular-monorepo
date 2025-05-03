@@ -6,9 +6,9 @@ import { NxWelcomeComponent } from './nx-welcome.component';
   standalone: true,
   imports: [NxWelcomeComponent, RouterModule],
   selector: 'app-root',
-  template:  './app.component.html',
-  styles: ['./app.component.scss'],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'nsbui';
+  title = 'sample-app';
 }

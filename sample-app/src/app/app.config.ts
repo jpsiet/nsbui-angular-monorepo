@@ -1,10 +1,14 @@
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
-import { appRoutes } from './app.routes';
+import { routes } from './app.routes';
 
 export const appConfig = {
   providers: [
-    provideRouter(appRoutes),
+    provideRouter(routes),
     provideAnimations(), // Corrected from provideBrowserAnimations
   ],
 };
+
+
+
+
