@@ -1,0 +1,25 @@
+ app-fa-final-input{
+  input {
+    border: none;
+    outline: none;
+  }
+
+  p {
+    color: aqua;
+  }
+  display: inline-flex;
+  border: 2px solid grey;
+  h1{
+    color: red;
+  }
+}
+
+// :host {
+//   display: inline-flex;
+//   border: 2px solid grey;
+// }
+
+app-fa-final-input.focus {
+  border: 2px solid blue;
+}
+

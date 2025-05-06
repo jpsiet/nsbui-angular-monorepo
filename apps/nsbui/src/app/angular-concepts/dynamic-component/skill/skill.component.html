@@ -1,0 +1,10 @@
+<div [formGroupName]="formGroupName">
+  skill name :
+  <input type="text"  [formControlName]="this.formGroupName.get('skill')">
+  exp:
+  <input type="text" [formControlName]="this.formGroupName.get('exp')">
+
+  <button (click)="handleRemoveSkill()">Remove</button>
+
+</div>
+

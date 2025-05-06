@@ -1,0 +1,33 @@
+
+
+<div [formGroup]="formGroup">
+  {{formGroup.value|json}}
+
+  <div>
+    <input placeholder="Course title" formControlName="title">
+  </div>
+<div>
+  <input type="checkbox" placeholder="Free course" formControlName="free">
+  </div>
+  <div>
+    <textarea placeholder="Description" formControlName="description">
+    </textarea>
+  </div>
+  <app-address-form  formControlName="address" [legend]="'Address'"></app-address-form>
+  <app-quanity  formControlName="qantity"></app-quanity>
+   {{formGroup.get('qantity')?.errors|json}}
+  <label ></label>
+ <app-form-array-lesson  formControlName="lessons"></app-form-array-lesson>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+

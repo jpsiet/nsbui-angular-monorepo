@@ -1,0 +1,47 @@
+<!--
+<div appSample>
+    <div appSampleModified> -->
+<div>
+  <div>
+    <p>{{content}}</p>
+    <p>{{valueObs|async}}</p>
+    <h1> testing</h1>
+    <h1> testing2</h1>
+    <p> {{data.name}}</p>
+    <!-- putting any to just to avoid compile time error -->
+    <p> {{$any(data).any}}</p>
+    There is two type of angular injector Element and Module
+    <p>
+
+      `UserServiceService already have root level provider that will shared
+      instance across all the application if you want seprate one create , or create provider in component level
+      here when you use class , UserService will get instance of baseService from injector
+      use class always create seprate instance of baseService class not the generic one
+      if you want the same global instance then useExisting instead of Use class
+
+      LegacyLogger is not class based so we can not use the Useclass or existing so we have to use
+      usevalue provider logic`
+
+    </p>
+    <div>
+
+      <div>
+        <p>
+
+        </p>
+
+        <p>
+          ` // optional modifier will not throw error if there is no provider for service
+          // Self modifier will throw error if there is no provider in this component it self
+          // @skip it will skip the current provide and will take from next in hierarchy`
+          // @host will look for same chain type... to parent....
+          but it will not take from host element, will throw error
+        </p>
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <app-di-research-child></app-di-research-child>

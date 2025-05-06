@@ -1,0 +1,70 @@
+<div >
+  <div>
+    <p>
+      Single Responsibility Principle :
+      <span>
+        A class/component should have one, and only one, reason to change.
+      </span>
+    </p>
+    <p>
+      Open/Closed Principle :
+      <span>
+        Objects or entities should be open for extension but closed for
+        modification.
+      </span>
+    </p>
+    <p>
+      Liskov Substitution Principle :
+
+      <span>
+        This means that every subclass or derived class should be substitutable
+        for their base or parent class.
+
+        <p>
+          it means if you extending any interface break ..and once you imlement
+          you can't change the type of method .. like if ealrier that was
+          returning string.. you can't change to non camptiable type
+        </p>
+      </span>
+    </p>
+    <p>
+      Interface Segregation Principle :
+      <span>
+        A client should never be forced to implement an interface that it
+        doesn’t use, or clients shouldn’t be forced to depend on methods they do
+        not use</span>
+    </p>
+    <p>
+      Dependency Inversion :
+
+      <span>
+        Entities must depend on abstractions, not on concretions. It states that
+        the high-level module must not depend on the low-level module, but they
+        should depend on abstractions.
+      </span>
+    </p>
+
+    <p>
+      <a
+        href="https://github.com/DMezhenskyi/solid-principles-in-angular/blob/single-responsibility/src/app/widget.component.ts">
+        Git Hub code
+      </a>
+    </p>
+    <hr />
+
+    <div class="solid-content">
+      <app-widget title="Wether">
+        <app-weather-content></app-weather-content>
+      </app-widget>
+      <app-widget title="Velocity">
+        <app-velocity-content></app-velocity-content>
+      </app-widget>
+      <app-widget title="general">
+        <app-general-content></app-general-content>
+      </app-widget>
+      <app-widget title="Anything">
+        <p>Any content</p>
+      </app-widget>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+:host  {
+ display: block;
+}
+
+.choose-quantity{
+  background-color: lightblue;
+  border: 1px solid blue;
+  text-align: center;
+
+  .plus-icon{
+    font-size: 20px;
+    padding-left: 15px;
+    color: green;
+    vertical-align: super;
+    cursor: pointer;
+
+  }
+  .minus-icon{
+    font-size: 35px;
+    padding-right: 15px;
+    color: green;
+    cursor: pointer;
+  }
+  .quantity{
+    vertical-align: bottom;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+
+}

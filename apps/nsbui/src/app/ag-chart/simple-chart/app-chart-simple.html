@@ -1,0 +1,12 @@
+<div class="custom-legend">
+  <div *ngFor="let fruit of fruits" class="legend-item">
+    <span class="legend-color" [ngStyle]="{'background-color': fruitColors[fruit]}"></span>
+    {{ fruit }}
+  </div>
+</div>
+
+<div class="chart-grid">
+  <div class="chart-box" *ngFor="let fruit of fruits">
+    <ag-charts-angular [options]="getChartOptions(fruit)"></ag-charts-angular>
+  </div>
+</div>

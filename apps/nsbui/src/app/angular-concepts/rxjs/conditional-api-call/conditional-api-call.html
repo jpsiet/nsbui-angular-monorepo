@@ -1,0 +1,54 @@
+<div class="search-contain-observable">
+welcome to call
+
+<input type="text" [(ngModel)]="id"> 
+<!-- <button  (click)="handleApply()"> Get Details</button> -->
+
+
+<div class="container">
+	<div class="row custom-wrapper">
+		<div class="col-md-12">
+
+			<!-- Form starts -->
+			<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+				<div class="my-3 mx-2 bg-slate-800 p-2 flex   justify-center  text-center  items-center ">
+					<div class="d-block my-3">
+
+                        <div class="mb-3">
+                            <select class="custom-select" formControlName="cityName">
+                            <option value="">Choose your city</option>
+                            <option *ngFor="let city of City" [ngValue]="city">{{city}}</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <select class="custom-select" formControlName="templateName">
+                            <option value="">Choose your templateName</option>
+                            <option *ngFor="let tmpl of Template" [ngValue]="tmpl">{{tmpl}}</option>
+                            </select>
+                        </div>  
+                        
+                        <div class="mb-3">
+                            <input  formControlName="id" > 
+                        </div>  
+
+                        <div class="mb-3">
+                            <button type="submit" class="border-t-neutral-800 bg-slate-400 p-3">Submit</button>
+
+                        </div>  
+                        <p class="w-10 h-6"  
+                        [ngClass]="{ 'bg-green-500': !fullServiceCall, 'bg-red-300': fullServiceCall }"> </p>
+    
+          </div>
+        
+        </div>
+
+     
+         
+      </form><!-- Form ends -->
+
+    </div>
+  </div>
+</div>
+
+</div>

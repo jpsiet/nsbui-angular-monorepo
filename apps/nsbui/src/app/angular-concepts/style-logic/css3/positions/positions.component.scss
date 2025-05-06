@@ -1,0 +1,67 @@
+.parent{
+  background-color: white;
+  height: 1000px;
+  position: relative;
+  width: 100%;
+}
+.child1 {
+  background-color: red;
+  width: 600px;
+  height: 50px;
+  position: fixed;
+  left: 0;
+}
+
+.child2 {
+  background-color: green;
+  width: 600px;
+  height: 50px;
+  position: absolute;
+  top:400px;
+  right: 0;
+}
+
+.child3 {
+  background-color: blue;
+  width: 600px;
+  height: 50px;
+  position: relative;
+}
+
+.child4 {
+  background-color: yellow;
+  width: 600px;
+  height: 50px;
+  position: sticky;
+  top: 5px;
+}
+.react{
+  width: 80px;
+  height: 60px;
+  background-color: lightblue;
+}
+
+.absolute-logic{
+ width: 600px;
+ height: 200px;
+ border: 1px solid blue;
+ position: relative;
+
+}
+.absolute-logic div{
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%,-50%);
+
+}
+.flexbox-logic{
+  width: 600px;
+  height:200px;
+  border: 1px solid blue;
+}
+.grid-logic{
+  width: 600px;
+  height: 200px;
+  border: 1px solid blue;
+}

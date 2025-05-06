@@ -1,0 +1,22 @@
+<div class="search-contain-observable">
+  <label> search via subjectevent</label>
+    <input  (keyup)="handleKeyChange($event)">
+  <ul>
+    <li *ngFor="let item of SearchData;index as i; first as isFirst">
+      <span >{{item['title']}}</span>
+    </li>
+  </ul>
+
+</div>
+
+
+<div class="search-contain-control">
+  <label> search via form control</label>
+  <input  [formControl]="searchInput" >
+<ul>
+  <li *ngFor="let item of SearchData;index as i; first as isFirst">
+    <span >{{item['title']}}</span>
+  </li>
+</ul>
+
+</div>

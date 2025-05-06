@@ -1,0 +1,26 @@
+.overlay1{
+  left: 300px;
+  margin-right: 150px;
+}
+
+.overlay2{
+  right: 300px;;
+}
+.overlay-cont{
+  border: 1px solid blue;
+  padding: 30px;
+  width: 100%;
+
+}
+
+::ng-deep .example-overlay1 {
+  background-color: red;
+
+}
+
+
+::ng-deep .example-overlay2 {
+  background-color: green;
+
+}
+

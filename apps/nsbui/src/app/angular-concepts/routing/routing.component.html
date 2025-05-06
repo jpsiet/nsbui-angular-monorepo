@@ -1,0 +1,12 @@
+<div>
+  <p class="red-test">Below Section for Routing new COmponent!</p>
+  <a  [routerLink]="['home']"> home</a>
+  <a  [routerLink]="['home',3]"> home by id</a>
+  <button (click)="handleRouting()"> by Id</button>
+
+  <div>
+    <p class="blue-test"> next to me routing</p>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

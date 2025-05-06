@@ -1,0 +1,12 @@
+<div [formGroup]="form">
+  <div>
+    <input matInput placeholder="Address Line " formControlName="addressLine" (blur)="onTouched()">
+  </div>
+
+  <div>
+    <input matInput placeholder="Zip Code" formControlName="zipCode" (blur)="onTouched()">
+  </div>
+  <div>
+    <input matInput placeholder="City" formControlName="city" (blur)="onTouched()">
+  </div>
+</div>

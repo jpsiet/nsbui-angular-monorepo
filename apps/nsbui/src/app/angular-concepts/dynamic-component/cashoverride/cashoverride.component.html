@@ -1,0 +1,28 @@
+
+
+    <div></div>
+    <p> List Of States</p>
+    <select name="States" id="state"  (change)="handleChange($event)">
+      <option *ngFor="let state of statesData" [value]="state.value">
+        {{state.name}}</option>
+    </select>
+
+
+
+  <div>
+    <p> List Of District</p>
+    <select name="dist" id="dist" >
+      <option *ngFor="let dist of districts" [value]="dist.value">
+        {{dist.name}}</option>
+
+    </select>
+
+
+  </div>
+  <div *ngIf="removable">
+    <button (click)="handleClickEvent()"> remove</button>
+
+
+  {{value|json}}
+ </div>
+

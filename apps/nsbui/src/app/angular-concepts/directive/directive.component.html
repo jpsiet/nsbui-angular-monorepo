@@ -1,0 +1,26 @@
+<p>directive works!</p>
+<div>
+  <h1> Track Service Directive</h1>
+  <div *ngFor="let item of data">
+    <div *ngFor="let col of column">
+
+      <!-- <div >Hello {{item[col]| uppercase}}</div>
+       {{col}}
+      <div>Hello {{item[col]}}</div> -->
+
+
+    </div>
+
+  </div>
+  <div>
+    <button online [track]="'first'">FFirst</button>
+    <button online [track]="'second'">SSecond</button>
+    <button online [track]="'third'">TTthird</button>
+  </div>
+  <div>
+    <h1>Basic template</h1>
+    <!-- <app-basic-template></app-basic-template> -->
+    <ng-template #foo >Hello I am inside Template</ng-template>
+  </div>
+</div>
+<router-outlet></router-outlet>

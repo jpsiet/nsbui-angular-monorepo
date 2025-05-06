@@ -1,0 +1,22 @@
+<p>test-direct works!</p>
+<h1 first> Hi Jitendra</h1>
+
+<h1 [first]="'first h1 Binding'"> Hi Jitendra</h1>
+<h1 [first]="'second h1 Binding'"> Hi Jitendra</h1>
+<button online> First</button> <button online> Second</button> <button online> Third</button>
+
+<div appSample> Hello Color Change Directive</div>
+<div *stucutredir="loadChild"> Hello strucutre Change Directive</div>
+<button (click)="handleStrTriggerChild()"> tootl load child struct dire</button>
+<div *threeStr="let messageStr"> Hello Str === {{messageStr}}</div>
+
+
+<ng-template #inlinetemplate let-message="message">
+  <p> Hello Ng  Inline template ==> {{message}} </p>
+</ng-template>
+
+<ng-template #template let-message="message">
+  <p> Hello Ng template ==> {{message}} </p>
+</ng-template>
+<div [ngTemplateOutlet]="inlinetemplate"
+ [ngTemplateOutletContext]="{message:'Hello Jitendra InLine Outlet template context'}"></div>

@@ -1,0 +1,17 @@
+<div>
+  Welcome to Angular Style Guid logic
+  <p>style-logic works!</p>
+  <button class="red-button">Welcome</button>
+  <app-style-comp1></app-style-comp1>
+  <div [ngClass]="this.theme?'blue-theme':'red-theme'">
+    <app-themeable-button-comp></app-themeable-button-comp>
+  </div>
+
+
+
+  <h1>No Color</h1>
+  <button (click)="handleTheme()"> chage Theme</button>
+  <p> Test Demo</p>
+  <app-app-test-style></app-app-test-style>
+
+</div>

@@ -1,0 +1,6 @@
+<p>tree-shakable works!</p>
+<app-mode>
+ <app-edit-mode *ngIf="this.todoService.editMode">
+ </app-edit-mode>
+ <app-edit-mode *ngIf="!todoService.editMode"></app-edit-mode>
+</app-mode>
