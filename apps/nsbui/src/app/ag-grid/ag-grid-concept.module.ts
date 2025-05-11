@@ -10,7 +10,7 @@ import { ResponsiveAgGridComponent } from './responsive-grid/responsive-grid.com
 import { PivotAgGridComponent } from './pivot-grid/pivot-grid.component';
 import { AgGridContComponent } from './grid-content/grid.component';
 import { EnterpriseGridComponent } from './enterprise-grid/enterprise-grid.component';
-import { SummaryGridComponent } from './summary-grid/summary-grid.component';
+import { StudentSummaryGridComponent } from './stdent-summary-grid/stdent-summary-grid.component';
 
 
 
@@ -40,8 +40,8 @@ const routes: Routes = [
         children: [],
       },
       {
-        path: 'summary-grid',
-        component: SummaryGridComponent,
+        path: 'student-summary-grid',
+        component: StudentSummaryGridComponent,
         children: [],
       }
 
