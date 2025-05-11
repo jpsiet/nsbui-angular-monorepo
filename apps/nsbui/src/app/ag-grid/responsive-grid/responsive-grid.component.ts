@@ -1,15 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ColDef, GetDataPath, GridApi } from 'ag-grid-community';
-import { IOlympicData } from './interface';
 import { HttpClient } from '@angular/common/http';
 import { AgGridAngular } from 'ag-grid-angular';
+import { IOlympicData } from '../IOlympicData';
 
 
 
 
 
 @Component({
-  selector: 'app-aggrid-responsive',
+  selector: 'app-responsive-grid',
   templateUrl: './responsive-grid.component.html',
   styleUrls: ['./responsive-grid.component.scss']
 })
@@ -22,7 +22,7 @@ export class ResponsiveAgGridComponent  {
         width: '100%',
         height: '100%',
         flex: '1 1 auto',
-        
+
     };
 
     public columnDefs: ColDef[] = [
