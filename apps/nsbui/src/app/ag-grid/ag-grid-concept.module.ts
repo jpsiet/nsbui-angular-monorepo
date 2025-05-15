@@ -11,6 +11,7 @@ import { PivotAgGridComponent } from './pivot-grid/pivot-grid.component';
 import { AgGridContComponent } from './grid-content/grid.component';
 import { EnterpriseGridComponent } from './enterprise-grid/enterprise-grid.component';
 import { StudentSummaryGridComponent } from './stdent-summary-grid/stdent-summary-grid.component';
+import { orientationGridComponent } from './orientation-grid/orientation-grid.component';
 
 
 
@@ -37,6 +38,11 @@ const routes: Routes = [
       {
         path: 'pivot-grid',
         component: PivotAgGridComponent,
+        children: [],
+      },
+       {
+        path: 'orient-grid',
+        component: orientationGridComponent,
         children: [],
       },
       {

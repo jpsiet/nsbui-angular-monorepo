@@ -5,12 +5,12 @@ import 'ag-grid-enterprise';
 
 @Component({
   selector: 'app-pivot-grid',
-  templateUrl: './pivot-grid.component.html',
-  styleUrls: ['./pivot-grid.component.scss'],
+  templateUrl: './orientation-grid.component.html',
+  styleUrls: ['./orientation-grid.component.scss'],
   standalone: true,
   imports: [AgGridModule],
 })
-export class PivotAgGridComponent implements OnInit {
+export class orientationGridComponent implements OnInit {
 
   @ViewChild(AgGridAngular) agGrid!: AgGridAngular;
 
