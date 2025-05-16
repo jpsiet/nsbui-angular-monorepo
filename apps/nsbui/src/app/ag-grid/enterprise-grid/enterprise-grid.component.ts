@@ -28,7 +28,7 @@ export class EnterpriseGridComponent    {
 
   public columnDefs: ColDef[] =  [
     { field: "country", rowGroup:true, hide:true },
-    { field: "athlete", rowGroup:true, hide:true },
+   // { field: "athlete", rowGroup:true, hide:true },
 
 
     { field: "age" },
@@ -54,7 +54,7 @@ export class EnterpriseGridComponent    {
   public autoGroupColumnDef: ColDef = {
     minWidth: 200,
     headerName: "",
-    // field: "sport",  // in can be any field does't have to be the same as the one in columnDefs
+     field: "athlete",  // in ca  n be any field does't have to be the same as the one in columnDefs
 
     cellRendererParams: {
       suppressCount: true,

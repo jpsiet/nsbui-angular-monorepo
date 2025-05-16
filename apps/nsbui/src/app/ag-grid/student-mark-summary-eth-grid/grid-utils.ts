@@ -37,4 +37,6 @@ function transformToWideRows(data:any) {
 
   return Array.from(grouped.values());
 }
+
+
 export const wideRowData = transformToWideRows(rawOrData);

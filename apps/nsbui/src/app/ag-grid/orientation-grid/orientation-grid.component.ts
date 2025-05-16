@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AgGridAngular, AgGridModule } from 'ag-grid-angular';
 import { ColDef, ColGroupDef, GridOptions, GridApi, GridReadyEvent } from 'ag-grid-community';
@@ -14,7 +15,7 @@ export class orientationGridComponent implements OnInit {
 
   @ViewChild(AgGridAngular) agGrid!: AgGridAngular;
 
-  rawData = [
+  orgRawData = [
     { state: 'California', university: 'Stanford', ethnicity: 'white', grade: '10th', marks: 88 },
     { state: 'California', university: 'Stanford', ethnicity: 'white', grade: '12th', marks: 91 },
     { state: 'California', university: 'Stanford', ethnicity: 'asian', grade: '10th', marks: 92 },
@@ -24,25 +25,29 @@ export class orientationGridComponent implements OnInit {
   ];
 
   columnDefs: ColDef[] = [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   rowData: any[] = [];
 
   isSwapped = false;
 
-  gridOptions: GridOptions = {
-    groupDisplayType: 'singleColumn',
-    animateRows: true,
-    defaultColDef: {
-      resizable: true,
-      sortable: true,
-      filter: true,
-      flex: 1,
-      minWidth: 120
-    },
-    autoGroupColumnDef: {
-      headerName: 'Group',
-      cellRendererParams: { suppressCount: true }
+ gridOptions: GridOptions = {
+  groupDisplayType: 'singleColumn',
+  animateRows: true,
+  defaultColDef: {
+    resizable: true,
+    sortable: true,
+    filter: true,
+    flex: 1,
+    minWidth: 120
+  },
+  autoGroupColumnDef: {
+    headerName: 'Group',
+    cellRendererParams: {
+      suppressCount: true,
+      labelKey: 'university' // 👈 This will show university name as the leaf label
     }
-  };
+  }
+};
   gridApi: any;
 
   ngOnInit() {
@@ -50,49 +55,60 @@ export class orientationGridComponent implements OnInit {
   }
 
   // ✅ Default: Group by state → university
-  setDefaultLayout() {
-    const grouped = new Map();
+setDefaultLayout() {
+  const grouped = new Map<string, any>();
 
-    this.rawData.forEach(row => {
-      const key = `${row.state}|${row.university}`;
-      if (!grouped.has(key)) {
-        grouped.set(key, {
-          state: row.state,
-          university: row.university
-        });
-      }
-      const flatRow = grouped.get(key);
-      flatRow[`${row.ethnicity}_${row.grade}`] = row.marks;
-    });
+  // Group by state+university, but only state is a row group
+  this.orgRawData.slice().forEach((row:any) => {
+    const key = `${row.state}|${row.university}`;
+    if (!grouped.has(key)) {
+      grouped.set(key, {
+        state: row.state,
+        university: row.university
+      });
+    }
+    const flatRow = grouped.get(key);
+    flatRow[`${row.ethnicity}_${row.grade}`] = row.marks;
+  });
 
-    this.rowData = Array.from(grouped.values());
+  this.rowData = Array.from(grouped.values());
 
-    this.columnDefs = [
-      { field: 'state', rowGroup: true, hide: true },
-      { field: 'university', rowGroup: true, hide: true },
-      {
-        headerName: 'White',
-        children: [
-          { field: 'white_10th', headerName: '10th Grade' },
-          { field: 'white_12th', headerName: '12th Grade' }
-        ]
-      } as ColGroupDef,
-      {
-        headerName: 'Asian',
-        children: [
-          { field: 'asian_10th', headerName: '10th Grade' },
-          { field: 'asian_12th', headerName: '12th Grade' }
-        ]
-      } as ColGroupDef
-    ];
-  }
+  console.log(this.rowData);
+
+  this.columnDefs = [
+    { field: 'state', rowGroup: true, hide: true },
+    // REMOVE the university column from here!
+    {
+      headerName: 'White',
+      children: [
+        { field: 'white_10th', headerName: '10th Grade' },
+        { field: 'white_12th', headerName: '12th Grade' }
+      ]
+    } as ColGroupDef,
+    {
+      headerName: 'Asian',
+      children: [
+        { field: 'asian_10th', headerName: '10th Grade' },
+        { field: 'asian_12th', headerName: '12th Grade' }
+      ]
+    } as ColGroupDef
+  ];
+}
 
   // ✅ Swapped: Group by ethnicity → grade, columns should be state → university
  setSwappedLayout() {
+  this.gridOptions.autoGroupColumnDef=  {
+    headerName: '',
+     field: 'university',
+    cellRendererParams: {
+      suppressCount: true,
+        },
+   // valueGetter: params =>  {  console.log(params.data);  return params.data?.university }// <-- add this line
+  };
   // 1. Build row data grouped by ethnicity and grade
   const grouped = new Map();
 
-  this.rawData.forEach(row => {
+   this.orgRawData.slice().forEach((row:any) => {
     const key = `${row.ethnicity}|${row.grade}`;
     if (!grouped.has(key)) {
       grouped.set(key, {
@@ -109,7 +125,7 @@ export class orientationGridComponent implements OnInit {
 
   // 2. Build unique states and universities for column groups
   const stateUniMap = new Map<string, Set<string>>();
-  this.rawData.forEach(row => {
+  this.rowData.forEach(row => {
     if (!stateUniMap.has(row.state)) {
       stateUniMap.set(row.state, new Set());
     }
@@ -139,8 +155,6 @@ onGridReady(params: any) {
   this.gridApi = params.api;
 
 }
-
-
 
   toggleGrouping() {
     this.isSwapped = !this.isSwapped;
