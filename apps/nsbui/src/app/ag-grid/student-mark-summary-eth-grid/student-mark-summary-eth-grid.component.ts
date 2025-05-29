@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { AgGridAngular } from 'ag-grid-angular';
 import { ColDef, ColGroupDef, GridOptions } from 'ag-grid-community';
-import { wideRowData } from './mock-data';
+
 
 
 @Component({
@@ -75,6 +75,8 @@ export class StudentMarkSummaryETHGridComponent {
       });
     });
     this.rowData = rowData;
+    console.log('rowData', this.rowData);
+
 
     // 3. Build columnDefs: state group → university columns
     const stateGroups: ColGroupDef[] = states.map(state => ({
@@ -91,5 +93,10 @@ export class StudentMarkSummaryETHGridComponent {
       { field: 'ethnicity', rowGroup: true, hide: true },
         ...stateGroups
     ];
+
+     console.log('columnDefs ETH', this.columnDefs);
   }
+
+
+
 }

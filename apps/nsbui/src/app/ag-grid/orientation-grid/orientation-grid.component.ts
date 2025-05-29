@@ -72,12 +72,8 @@ setDefaultLayout() {
   });
 
   this.rowData = Array.from(grouped.values());
-
-  console.log(this.rowData);
-
   this.columnDefs = [
     { field: 'state', rowGroup: true, hide: true },
-    // REMOVE the university column from here!
     {
       headerName: 'White',
       children: [

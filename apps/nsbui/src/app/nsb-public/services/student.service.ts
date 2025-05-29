@@ -15,12 +15,12 @@ export class StudentService {
 
 
 
-  constructor(private http: HttpClient,public dialog: MatDialog) { }
+  constructor(private http: HttpClient) { }
 
   openStudentDialog(data:any=null,dailogComponent:any){
-    return  this.dialog.open(dailogComponent, {
-      data: data,
-    });
+    // return  this.dialog.open(dailogComponent, {
+    //   data: data,
+    // });
 
   }
 

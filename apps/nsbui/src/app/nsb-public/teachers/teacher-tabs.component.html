@@ -1,0 +1,11 @@
+
+  <mat-tab backgroundColor="primary" color="primary" [label]="stream">
+     <div >
+      Teachers  List
+      <!-- Replace with your teacher display component as needed -->
+      <div *ngFor="let teacher of teachers">
+        {{ teacher.name }}
+      </div>
+    </div>
+  </mat-tab>
+

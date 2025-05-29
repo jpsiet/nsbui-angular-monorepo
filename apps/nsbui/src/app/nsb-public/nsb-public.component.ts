@@ -1,19 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
 
 
 
 @Component({
-  selector: 'nsb-public-component',
+  selector: 'app-nsb-public-component',
   templateUrl: './nsb-public.component.html',
   styleUrls: ['./nsb-public.component.scss'],
 
 })
-export class NsbPublicComponent implements OnInit {
-  
-  constructor() {
-  }
+export class NsbPublicComponent  {
 
-  ngOnInit(): void {
-   }
   title = 'nsb-school-ui';
  }

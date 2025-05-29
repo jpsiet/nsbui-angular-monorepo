@@ -10,10 +10,7 @@ import {
   MatDialogActions,
   MatDialogClose,
 } from '@angular/material/dialog';
-import { MatButtonModule } from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
+
 import { StudentService } from '../../services/student.service';
 
 
@@ -22,7 +19,7 @@ import { StudentService } from '../../services/student.service';
   templateUrl: './students.component.html',
   styleUrls: ['./students.component.scss'],
 })
-export class StudentsComponent implements OnInit {
+export class StudentsComponent  {
   constructor(
     public dialog: MatDialog,
     private studentService: StudentService
@@ -31,15 +28,15 @@ export class StudentsComponent implements OnInit {
 
   students: any;
 
-  ngOnInit(): void {}
+
   handleAddStudents() {
-    const dialogRef = this.studentService.openStudentDialog({},AddStudentsComponent);
-    (dialogRef.componentInstance as any).done.subscribe((data:any) => {
-      this.updateGrid = true;
-      dialogRef.close();
-    });
-    dialogRef.afterClosed().subscribe(() => {
-      this.updateGrid = false;
-    });
+    // const dialogRef = this.studentService.openStudentDialog({},AddStudentsComponent);
+    // (dialogRef.componentInstance as any).done.subscribe((data:any) => {
+    //   this.updateGrid = true;
+    //   dialogRef.close();
+    // });
+    // dialogRef.afterClosed().subscribe(() => {
+    //   this.updateGrid = false;
+    // });
   }
 }

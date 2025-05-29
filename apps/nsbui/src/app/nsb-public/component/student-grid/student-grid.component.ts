@@ -78,11 +78,11 @@ export class StudentGridComponent implements OnInit, OnChanges {
       }
 
       if (action === 'update') {
-        const dialogRef = this.studentService.openStudentDialog(params.data,AddStudentsComponent);
-        (dialogRef.componentInstance as any).done.subscribe((data:any) => {
-          this.fetchStudents();
-          dialogRef.close();
-        });
+        // const dialogRef = this.studentService.openStudentDialog(params.data,AddStudentsComponent);
+        // (dialogRef.componentInstance as any).done.subscribe((data:any) => {
+        //   this.fetchStudents();
+        //   dialogRef.close();
+        // });
       }
     }
   }
