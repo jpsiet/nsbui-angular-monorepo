@@ -1,0 +1,22 @@
+<div style="margin-bottom: 10px;">
+  <button (click)="setNormalView()" [disabled]="!isTransposed">Normal View</button>
+  <button (click)="setTransposedView()" [disabled]="isTransposed">Transpose View</button>
+</div>
+
+<ag-grid-angular
+  style="width: 100%; height: 500px;"
+  class="ag-theme-alpine"
+  [rowData]="rowData"
+  [columnDefs]="columnDefs"
+  [defaultColDef]="{ resizable: true, flex: 1 }"
+  [treeData]="true"
+  [getDataPath]="isTransposed ? getTransposedDataPath : getDataPath"
+  [groupDisplayType]="'multipleColumns'"
+  [autoGroupColumnDef]="{
+    headerName: isTransposed ? 'Metric Group' : 'Portfolio',
+    minWidth: 200,
+    cellRendererParams: { suppressCount: true }
+  }"
+  [animateRows]="true"
+>
+</ag-grid-angular>
