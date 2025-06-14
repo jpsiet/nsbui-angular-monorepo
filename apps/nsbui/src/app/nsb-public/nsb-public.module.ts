@@ -19,8 +19,9 @@ import { NsbPublicComponent } from './nsb-public.component';
 import { TeachersContComponent } from './teachers-cont.component';
 import { TeacherTabsComponent } from './teachers/teacher-tabs.component';
 import { TeacherService } from './services/teacher-service';
+import {  MarkTranposeGridComponent } from './component/marks-grid/mark-tranpose-grid.component';
 
-
+import 'ag-grid-enterprise';
 
 const routes: Routes = [
   {
@@ -40,7 +41,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [StudentsComponent, NsbPublicComponent,
-    AddStudentsComponent, StudentGridComponent,
+    AddStudentsComponent, StudentGridComponent, MarkTranposeGridComponent,
     TeachersContComponent,
     TeacherTabsComponent],
   imports: [

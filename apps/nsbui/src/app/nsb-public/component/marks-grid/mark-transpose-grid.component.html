@@ -1,0 +1,17 @@
+<div style="margin-bottom: 10px;">
+  <button (click)="toggleTranspose()">
+    {{ isTransposed ? 'Switch to Normal View' : 'Transpose Grid' }}
+  </button>
+</div>
+
+<ag-grid-angular
+  style="width: 100%; height: 500px;"
+  class="ag-theme-alpine"
+  [rowData]="rowData"
+  [columnDefs]="columnDefs"
+  [autoGroupColumnDef]="autoGroupColumnDef"
+  [defaultColDef]="{ resizable: true, flex: 1 }"
+  [groupDisplayType]="'singleColumn'"
+  [animateRows]="true"
+>
+</ag-grid-angular>
