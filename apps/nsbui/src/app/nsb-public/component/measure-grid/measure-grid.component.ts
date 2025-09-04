@@ -102,7 +102,6 @@ export class MeasureGridComponent  {
         headerName: this.capitalize(measure)
       }))
     }));
-
     return dynamicCols;
   }
 

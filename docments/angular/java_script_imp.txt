@@ -1,0 +1,27 @@
+
+1. elvis operator (?) or optional chaining
+
+2. ! non null assertion operator or definite assignment operator
+
+Autoboxing is the automatic conversion that the Java compiler makes between the primitive types and their corresponding object wrapper classes
+like  string is primitive type of string not object, but when you do .length it's do autoboxing a for string object primitive type then java script will  connect buit it prottype
+
+Lexical scope is the author of function scope not run time
+Type Script  imp 
+
+
+
+3. type vs interface.. almost same except. interface support declartion merging and type no.. means if can two interface with same name and later automatically merged with same name.
+
+types support union and intersection (&) primtive shorthand functions advanced type function.. means create one type and use in other type
+
+interface :  declartion merging and extends
+
+
+function layoutSettings(setting:{ direction:'left'|'right',padding:number}){
+  console.log('performing settings', setting);
+}
+const  setting = {direction:'left' as const ,padding:5}
+layoutSettings(setting);
+
+when we create variable type script infer as correspoding type  like in case of direction it will think value as type string not  like  only 'left' or right as we are giving so by doing as const it will make only type literal value as left and will work out

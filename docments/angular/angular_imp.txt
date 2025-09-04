@@ -1,0 +1,21 @@
+Generate Component wth Form
+>ng g c app/forms/quanity -m=forms/custom-forms.module
+
+ng new mono-workpsace --createApplication="false"
+
+cd mono-workspace
+ng g application host-app --rotuing --style=scss
+ng g c home --project=host-app
+
+run app  ng s host-app  -o ( open browser) --port( in case port number)
+
+npm add @angular-architects/module-federation --project=host-app
+
+ng g @angular-architects/module-federation:init --project host-app  --type host --port 4200
+
+ ng g @angular-architects/module-federation:init --project mfe-app  --port 4201
+
+Make local api call from spring boot  use cors allow localhost in service
+as well as UI call Typo; you need to do this.http.get("http://localhost:8080/foo")
+ rather than this.http.get("localhost:8080/foo"). 
+That is, you must include the http:// part.
