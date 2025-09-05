@@ -1,11 +1,13 @@
 import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { ReactiveFormsModule, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { StudentService } from '../../services/student.service';
 
 
+
 @Component({
   selector: 'app-add-students',
+  imports: [ReactiveFormsModule],
   templateUrl: './add-students.component.html',
   styleUrls: ['./add-students.component.scss'],
 })

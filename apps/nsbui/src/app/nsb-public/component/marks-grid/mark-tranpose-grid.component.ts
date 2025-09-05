@@ -7,6 +7,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { originalRowData, transposeRowData } from './grid-config';
+import { AgGridAngular } from 'ag-grid-angular';
 
 
 
@@ -14,6 +15,7 @@ import { originalRowData, transposeRowData } from './grid-config';
 
 @Component({
   selector: 'app-mark-tranpose-grid',
+  imports  :[AgGridAngular],
   templateUrl: './mark-transpose-grid.component.html'
 })
 export class MarkTranposeGridComponent  {

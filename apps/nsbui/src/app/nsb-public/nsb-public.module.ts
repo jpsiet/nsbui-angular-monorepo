@@ -41,21 +41,29 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [StudentsComponent, NsbPublicComponent,
-    AddStudentsComponent, StudentGridComponent,
-     MarkTranposeGridComponent,MeasureGridComponent,
-    TeachersContComponent,
-    TeacherTabsComponent],
+  declarations: [
+    // ...existing code...
+    // Remove all standalone components from declarations
+    // ...existing code...
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     AgGridModule,
     FormsModule,
     MatDialogModule,
-MatTabsModule ,
+    MatTabsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    // REMOVE RouterOutlet from here!
+    // Add all standalone components here
+    StudentsComponent,
+    NsbPublicComponent,
+    AddStudentsComponent,
+    StudentGridComponent,
+    MarkTranposeGridComponent,
+    MeasureGridComponent,
+    TeacherTabsComponent,
+    TeachersContComponent
   ],
   providers: [TeacherService],
 })

@@ -4,12 +4,12 @@ import { Component } from '@angular/core';
   selector: 'app-teachers-cont',
   template: `
 
-  <mat-tab-group mat-stretch-tabs="false"
+  <!-- <mat-tab-group mat-stretch-tabs="false"
   *ngFor="let stream of streams"  mat-align-tabs="center">
 
 
       <app-teacher-tabs [stream]="stream"></app-teacher-tabs>
-</mat-tab-group>
+</mat-tab-group> -->
   `
 })
 export class TeachersContComponent {

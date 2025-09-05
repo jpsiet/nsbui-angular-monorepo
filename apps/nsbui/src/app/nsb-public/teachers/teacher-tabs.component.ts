@@ -1,11 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TeacherService } from '../services/teacher-service';
+import { MatTab } from "@angular/material/tabs";
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-teacher-tabs',
   templateUrl: './teacher-tabs.component.html',
-  styleUrls: ['./teacher-tabs.component.scss']
+  styleUrls: ['./teacher-tabs.component.scss'],
+  imports: [MatTab, CommonModule]
 })
 export class TeacherTabsComponent implements OnInit {
   @Input() stream = 'Science';

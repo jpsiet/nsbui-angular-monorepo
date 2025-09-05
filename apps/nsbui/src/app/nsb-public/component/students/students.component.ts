@@ -12,10 +12,17 @@ import {
 } from '@angular/material/dialog';
 
 import { StudentService } from '../../services/student.service';
+import { AgGridAngular } from 'ag-grid-angular';
+import { ReactiveFormsModule } from '@angular/forms';
+import { StudentGridComponent } from '../student-grid/student-grid.component';
 
 
 @Component({
   selector: 'app-students',
+  imports: [
+    StudentGridComponent,
+    ReactiveFormsModule,
+ ],
   templateUrl: './students.component.html',
   styleUrls: ['./students.component.scss'],
 })

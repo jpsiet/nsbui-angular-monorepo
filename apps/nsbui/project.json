@@ -57,18 +57,21 @@
       },
       "defaultConfiguration": "production"
     },
-  "serve": {
-  "executor": "@angular-devkit/build-angular:dev-server",
-  "configurations": {
-    "production": {
-      "browserTarget": "nsbui:build:production"
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "buildTarget": "nsbui:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "nsbui:build:production"
+        },
+        "development": {
+          "buildTarget": "nsbui:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
     },
-    "development": {
-      "browserTarget": "nsbui:build:development"
-    }
-  },
-  "defaultConfiguration": "development"
-},
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {

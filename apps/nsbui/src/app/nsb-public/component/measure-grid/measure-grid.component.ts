@@ -6,11 +6,13 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
+import { AgGridAngular } from 'ag-grid-angular';
 
 
 
 @Component({
   selector: 'app-measure-grid',
+imports  :[AgGridAngular],
   templateUrl: './measure-grid.component.html'
 })
 export class MeasureGridComponent  {

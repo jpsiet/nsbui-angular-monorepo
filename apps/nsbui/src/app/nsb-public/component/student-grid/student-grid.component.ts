@@ -11,6 +11,7 @@ import { StudentService } from '../../services/student.service';
 import { AddStudentsComponent } from '../add-students/add-students.component';
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { Student } from 'apps/nsbui/src/generated/model/student';
+import { AgGridAngular } from 'ag-grid-angular';
 
 
 function actionCellRenderer(params: any) {
@@ -32,6 +33,7 @@ function actionCellRenderer(params: any) {
 
 @Component({
   selector: 'app-student-grid',
+  imports: [AgGridAngular],
   templateUrl: './student-grid.component.html',
   styleUrls: ['./student-grid.component.scss'],
 })
